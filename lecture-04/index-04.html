@@ -1,0 +1,154 @@
+<html>
+          <head>
+                    <style type="text/css">
+                              a:link {color:#FF0000;}
+                              a:visited {color:#00FF00;}
+                              a:hover {color:#0000FF;}
+                              a:active {color:#FF00FF;}
+                              ul{
+                                        list-style: square inside url('https://www2.atmos.umd.edu/~chepurin/STUFF/bullets/sqpurple.gif');
+                              }
+                              ul.a{list-style-position: outside;}
+                              ul.b{list-style-position: inside;}
+                              //ul{list-style: decimal inside url('notHere.gif');}
+                              table{
+                                        border-collapse:collapse;
+                                        width:100%;
+                                        border-width: 7px;
+                                        border-color: rgb(100,100,255);
+                                        border-style: dashed;
+                              }
+                              table,th,td{border:1px solid black;}
+                              th{
+                                        height:50px;
+                                        background-color: green;
+                                        color: white;
+                              }
+                              td{
+                                        text-align: right;
+                                        border-width: medium;
+                                        height:50px;
+                                        padding:15px;
+                                        vertical-align: bottom;
+                                        border-color: blue;
+                                        border-style: solid;
+                              }
+                              p{
+                                        border-width: thick;
+                                        border-color: blue;
+                                        border-style: solid;
+                                        border-top-style: dotted;
+                                        border-right-style: solid;
+                                        border-bottom-style: dotted;
+                                        border-left-style: dotted;
+                              }
+                              p.solid{border-style: solid;}
+                              p.dashed{border-style: dashed;}
+                              p.double{border-style: double;}
+                              p.groove{border-style: groove;}
+                              p.dotted{border-style: dotted;}
+                              p.inset{border-style: inset;}
+                              p.outset{border-style: ridge;}
+                              p.hidden{border-style: hidden;}
+                              p.none{border-style: none;}
+                              p.mix{border-style: dotted dashed solid double;}
+                              #container{
+                                        margin-top: 0;
+                                        margin-right: 5px;
+                                        margin-bottom: 6px;
+                                        margin-left: 5px;
+                                        padding-right: 10px;
+                                        padding-top: 20px;
+                                        padding-bottom: 30px;
+                                        padding-left: 12px;
+                              }
+                              #myBox{
+                                        position: relative;
+                                        left: 20px;
+                                        top: 20px;
+                              }
+                              img{
+                                        position: absolute;
+                                        left: 0px;
+                                        top: 0px;
+                                        z-index: -1;
+                              }
+                    
+                    </style>
+          </head>
+          <body>
+                    <p><b><a href="default.asp.html" target="_blank">This is a link</a></b></p>
+                    <p><b>Note:</b>a:hover Must come after a:link and a:visited in the css
+                    definition in order to be effective.</p>
+                    <p><b>Note:</b>a:active Must come after a:hover in the css
+                    definition in order to be effective.</p>
+
+
+
+                    <h2>The list-style-image Property</h2>
+                    <p>The list-style-image property specifies an image as the list item marker:</p>
+                    <ul>
+                              <li>Coffee</li>
+                              <li>Tea</li>
+                              <li>Coca Cola</li>
+                    </ul>
+
+
+
+                    <h1>The list-style-position Property</h1>
+                    <h2>list-style-position: outside (default):</h2>
+                    <ul class="a">
+                              <li>Coffee </li>
+                              <li>Coca Cola </li>
+                    </ul>
+                    <h2>list-style-position: inside:</h2>
+                    <ul class="b">
+                              <li>Coffee </li>
+                              <li>Tea </li>
+                    </ul>
+
+
+
+                    <h2>Let the table borders collapse</h2>
+                    <table>
+                              <tr>
+                                        <th>Firstname</th>
+                                        <th>Lastname</th>
+                              </tr>
+                              <tr>
+                                        <td>Peter</td>
+                                        <td>Griffin</td>
+                              </tr>
+                              <tr>
+                                        <td>Lois</td>
+                                        <td>Griffin</td>
+                              </tr>
+                    </table>
+
+
+
+                    <h2>The border-style Property</h2>
+                    <p>This property specifies what kind of border to display:</p>
+                    <p class="dotted">A dotted border</p>
+                    <p class="double">DOuble border</p>
+                    <p class="dashed">Dashed</p>
+                    <p class="solid">solid</p>
+                    <p class="groove">groove</p>
+                    <p class="ridge">ridge</p>
+                    <p class="inset">inset</p>
+                    <p class="outset">outset</p>
+                    <p class="none">none</p>
+                    <p class="hidden">hidden</p>
+                    <p class="mix">mix</p>
+
+                    
+
+                    <h1>This is a heading</h1>
+                    <img src="img_tree.png">
+                    <p>Because the image has a z-index of -1, it will be placed behind the text.</p>
+
+</body>
+</html>
+
+          </body>
+</html>
