@@ -1,0 +1,33 @@
+p{
+          color:red;
+          text-align:center;
+}
+
+body{
+          margin: 0;
+          padding: 0;
+          border-top: 1px solid #ff0;
+          background-color:#b0c4de;
+}
+
+h1,h2,h3,h4,h5,h6{
+          font-family: "trebuchet ms", sans-serif;
+}
+
+.intro{
+          font: 12px verdana, sans-serif;
+          margin: 10px;
+}
+
+#intro{
+          border-bottom: 2px dashed #fff;
+}
+textarea.noScroll {
+          background-image: url(smallPic.jpg);
+          background-attachment: fixed;
+}
+          
+textarea {
+          background-image: url(smallPic.jpg);
+          background-attachment: scroll;
+}
