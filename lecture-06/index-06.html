@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Examples</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> <!-- Include jQuery -->
+    <style>
+        .link_class {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px;
+            background-color: #ddd;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .intro {
+            font-size: 16px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Examples</h1>
+
+    <hr />
+
+    <!-- Example 1: Change Background Color of Links -->
+    <h2>Example 1: Change Background Color of Links (Vanilla JS)</h2>
+    <a href="#" class="link_class">Link 1</a>
+    <a href="#" class="link_class">Link 2</a>
+    <a href="#" class="other_class">Link 3</a>
+    <script>
+        var myLinkCollection = document.getElementsByTagName("a");
+        for (var i = 0; i < myLinkCollection.length; i++) {
+            if (myLinkCollection[i].className == "link_class") {
+                myLinkCollection[i].onclick = function () {
+                    this.style.backgroundColor = "#f00";
+                };
+            }
+        }
+    </script>
+
+    <hr />
+
+    <!-- Example 2: Change Background Color of Links (jQuery) -->
+    <h2>Example 2: Change Background Color of Links (jQuery)</h2>
+    <a href="#" class="link_class">Link A</a>
+    <a href="#" class="link_class">Link B</a>
+    <a href="#" class="other_class">Link C</a>
+    <script>
+        $("a").each(function () {
+            if ($(this).hasClass("link_class")) {
+                $(this).click(function () {
+                    $(this).css("background-color", "#f00");
+                });
+            }
+        });
+    </script>
+
+    <hr />
+
+    <!-- Example 3: Change Background Color of Elements with Class "intro" -->
+    <h2>Example 3: Change Background Color of Elements with Class "intro"</h2>
+    <p class="intro">This is an introductory paragraph.</p>
+    <p class="intro">Another introductory paragraph.</p>
+    <p class="other_class">This paragraph does not belong to the intro class.</p>
+    <script>
+        var myElementCollection = document.getElementsByClassName("intro");
+        for (var i = 0; i < myElementCollection.length; i++) {
+            myElementCollection[i].onclick = function () {
+                this.style.backgroundColor = "#f00";
+            };
+        }
+    </script>
+
+    <hr />
+
+    <!-- Example 4: Accessing Child Nodes -->
+    <h2>Example 4: Accessing Child Nodes</h2>
+    <ul id="list">
+        <li><a href="#" class="first_link">First Link</a></li>
+        <li><a href="#" class="second_link">Second Link</a></li>
+    </ul>
+    <script>
+        var myLinkList = document.getElementById("list");
+        var myFirstLink = myLinkList.firstChild.firstChild; // First link in the list
+        alert(myFirstLink.className);
+
+        myFirstLink = myLinkList.firstChild.firstChild.nextSibling.previousSibling; // Same link
+        alert(myFirstLink.className);
+    </script>
+
+    <hr />
+
+    <!-- Example 5: Adding a New List Item -->
+    <h2>Example 5: Adding a New List Item</h2>
+    <ul id="list">
+        <li><a href="#" class="link_class">Existing Link</a></li>
+    </ul>
+    <script>
+        var myNewListItem = document.createElement("li");
+        var myNewLink = document.createElement("a");
+        myNewLink.href = "#";
+        myNewLink.innerHTML = "New Link";
+        var myLinkList = document.getElementById("list");
+        myLinkList.appendChild(myNewListItem); // Add new list item
+        myLinkList.lastChild.appendChild(myNewLink); // Add link inside it
+    </script>
+
+    <hr />
+
+    <!-- Example 6: Removing a List Item -->
+    <h2>Example 6: Removing a List Item</h2>
+    <ul id="list">
+        <li><a href="#" class="link_class">First Link</a></li>
+        <li><a href="#" class="link_class">Second Link</a></li>
+    </ul>
+    <script>
+        var myLinkList = document.getElementById("list");
+        var myRemovedLink = myLinkList.lastChild; // Select the last list item
+        myLinkList.removeChild(myRemovedLink); // Remove it
+    </script>
+
+</body>
+</html>

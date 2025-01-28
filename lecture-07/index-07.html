@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Examples</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> <!-- Include jQuery -->
+</head>
+<body>
+    <h1>JavaScript Examples</h1>
+
+    <!-- Placeholder div to display results -->
+    <div id="myDiv">Content will load here...</div>
+    <div id="results">Results will load here...</div>
+    <div id="log">Log will display here...</div>
+
+    <hr />
+
+    <!-- Example 1: Basic XMLHttpRequest -->
+    <h2>Example 1: Basic XMLHttpRequest</h2>
+    <script>
+        var xmlhttp;
+        if (window.XMLHttpRequest) {
+            // For modern browsers
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // For older versions of IE
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+            }
+        };
+
+        xmlhttp.open("GET", "ajax_info.txt", true); // Replace with an actual URL
+        xmlhttp.send();
+    </script>
+
+    <hr />
+
+    <!-- Example 2: Parse XML Response -->
+    <h2>Example 2: Parsing XML Response</h2>
+    <script>
+        xmlhttp.open("GET", "ajax_info.xml", true); // Replace with an actual XML file URL
+        xmlhttp.send();
+
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                var xmlDoc = xmlhttp.responseXML;
+                var txt = "";
+                var x = xmlDoc.getElementsByTagName("ARTIST");
+                for (var i = 0; i < x.length; i++) {
+                    txt += x[i].childNodes[0].nodeValue + "<br />";
+                }
+                document.getElementById("myDiv").innerHTML = txt;
+            }
+        };
+    </script>
+
+    <hr />
+
+    <!-- Example 3: Using jQuery AJAX -->
+    <h2>Example 3: Using jQuery AJAX</h2>
+    <script>
+        // POST request with jQuery
+        $.ajax({
+            type: "POST",
+            url: "some.php", // Replace with an actual URL
+            data: { name: "John", location: "Boston" },
+        }).done(function (msg) {
+            alert("Data Saved: " + msg);
+        });
+
+        // GET request with cache disabled
+        $.ajax({
+            url: "test.html", // Replace with an actual URL
+            cache: false,
+        }).done(function (html) {
+            $("#results").append(html);
+        });
+
+        // AJAX POST request with error handling
+        var menuId = $("ul.nav").first().attr("id"); // Make sure "ul.nav" exists in your HTML
+        var request = $.ajax({
+            url: "script.php", // Replace with an actual URL
+            type: "POST",
+            data: { id: menuId },
+            dataType: "html",
+        });
+
+        request.done(function (msg) {
+            $("#log").html(msg);
+        });
+
+        request.fail(function (jqXHR, textStatus) {
+            alert("Request failed: " + textStatus);
+        });
+    </script>
+
+</body>
+</html>
