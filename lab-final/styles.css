@@ -1,0 +1,24 @@
+#menu {
+          position: relative;
+      }
+      
+      .dropdown {
+          display: none;
+          position: absolute;
+          background-color: white;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+          padding: 10px;
+      }
+      
+      .about-container {
+          display: inline-block;
+          position: relative;
+      }
+      
+      .about-container:hover .dropdown {
+          display: block;
+      }
+      
+      .dropdown p {
+          margin: 5px 0;
+      }
